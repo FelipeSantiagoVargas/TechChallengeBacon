@@ -54,7 +54,7 @@ GET /reports/:name
 
 ________________________________
 
-##Development Process
+## Development Process
 
 For solving this test, I began by identifying the problem and breaking it down into small steps.
 
