@@ -28,7 +28,14 @@ def reportsByName(name):
         report = Report.query.filter_by(name=name).first()
         data = json.loads(report.data)
         common_words = json.loads(report.common_words) 
-        pdf_report = generate_pdf_report(data, common_words, "bar.png", "distribution.png")
+         #Transform to dataframe
+        df = pd.DataFrame(data)
+
+        #Transform data, tokenization, punctuation removal, and converting text to lowercase       
+        df["transformed"] = df[0].apply(tokenize)
+        df["transformed"] = df["transformed"].apply(remove_punctuation)
+        df["transformed"] = df["transformed"].apply(convert_to_lowercase)
+        pdf_report = generate_pdf_report(data, common_words, df, "bar.png", "distribution.png")
 
         
         return send_file(BytesIO(pdf_report),
