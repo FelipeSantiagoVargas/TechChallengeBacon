@@ -1,0 +1,8 @@
+*.png
+
+.env
+
+mysql_data
+
+__pycache__
+
