@@ -71,3 +71,7 @@ Then, I proceeded to analyze the information with the help of pandas and the imp
 After completing this process, I created the docker-compose.yaml file to set up a MySQL database. With the help of the SQLAlchemy library, I made the necessary connections and stored the required information to generate the PDF. For this, it was necessary to create two additional endpoints to query the available reports and regenerate a PDF from any of them.
 
 Finally, I drafted this document.
+
+> [!NOTE]
+> The ```sample.pdf``` is an example of the result.
+
